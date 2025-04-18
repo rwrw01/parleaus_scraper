@@ -84,7 +84,6 @@ async def zoek(request: Request):
     
     try:
         resultaat = zoek_documenten(term)
-        urls = [doc["document_url"] for doc in resultaat if doc.get("document_url")]
         return JSONResponse(content=resultaat)
     except Exception as e:
         print(f"API Error: {str(e)}")  # Add logging
