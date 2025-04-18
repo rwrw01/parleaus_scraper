@@ -81,7 +81,6 @@ async def zoek(request: Request):
     term = request.query_params.get("term", "")
     if not term:
         return JSONResponse(content={"error": "No search term provided"})
-    
     try:
         resultaat = zoek_documenten(term)
         return JSONResponse(content=resultaat)
