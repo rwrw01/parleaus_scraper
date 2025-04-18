@@ -63,12 +63,17 @@ def zoek_documenten(zoekterm):
 
         documenten = []
         for item in result:
+            # Generate document URL if available in the response
+            document_url = item.get('url', '')
+            if not document_url and 'id' in item:
+                document_url = f"https://bodegraven-reeuwijk.qualigraf.nl/document/{item['id']}"
+                
             documenten.append({
                 "title": item.get('title', ''),
                 "date": item.get('date', ''),
                 "party": item.get('party', ''),
                 "type": item.get('type', ''),
-                "document_url": full_url,
+                "document_url": document_url,
                 "summary": item.get("description", "").replace("<strong>", "").replace("</strong>", "")
             })
         return documenten
