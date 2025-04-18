@@ -75,7 +75,6 @@ def zoek_documenten(zoekterm):
                 "type": item.get('type', ''),
                 "document_url": document_url,
                 "summary": item.get("description", "").replace("<strong>", ""),
-                "document_url": full_url.
                 replace("</strong>", "")
             })
         return documenten
