@@ -10,5 +10,5 @@ class handler(BaseHTTPRequestHandler):
         
         self.wfile.write(json.dumps({
             "message": "API is running. This is a test response.",
-            "path": self.path
+            #"path": self.path
         }).encode())
