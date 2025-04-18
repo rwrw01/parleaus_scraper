@@ -68,6 +68,7 @@ def zoek_documenten(zoekterm):
                 "date": item.get('date', ''),
                 "party": item.get('party', ''),
                 "type": item.get('type', ''),
+                "document_url": full_url,
                 "summary": item.get("description", "").replace("<strong>", "").replace("</strong>", "")
             })
         return documenten
