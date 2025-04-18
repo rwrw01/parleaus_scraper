@@ -31,7 +31,7 @@ def zoek_documenten(zoekterm):
         "documentTypes": [],
         "locations": [],
         "dates": {
-            "from": "2020-01-01",
+            "from": "2023-01-01",
             "until": "2025-12-31"
         },
         "secties": "",
