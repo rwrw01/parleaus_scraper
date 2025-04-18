@@ -96,13 +96,6 @@ async def zoek(request: Request):
         print(f"API Error: {str(e)}")  # Add logging
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
-@app.route("/documenten-urls", methods=["GET"])
-def urls():
-    zoekterm = request.args.get("term", "")
-    resultaat = zoek_documenten(zoekterm)
-    urls = [doc["document_url"] for doc in resultaat if doc.get("document_url")]
-    return jsonify(urls)
-
 # Add a root endpoint for testing
 @app.get("/")
 async def root():
